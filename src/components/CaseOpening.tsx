@@ -86,6 +86,7 @@ export const CaseOpening: React.FC = () => {
     setShowResult(false);
     setLastResult(null);
     setCurrentSequence(getDefaultReelSequence());
+    setHistory([]);
   };
 
   const toggleSound = () => {
@@ -169,7 +170,7 @@ export const CaseOpening: React.FC = () => {
 
             <button
               onClick={resetGame}
-              hidden={isSpinning}
+              disabled={isSpinning}
               className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white transition-all duration-300 transform hover:scale-105"
             >
               <RotateCcw className="w-5 h-5" />
