@@ -10,5 +10,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: 'happpy-land-scum-gacha',
+  base: '/happpy-land-scum-gacha/',
 });
