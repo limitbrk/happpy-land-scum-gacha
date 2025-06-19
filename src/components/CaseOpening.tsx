@@ -69,7 +69,7 @@ export const CaseOpening: React.FC = () => {
       };
       
       setLastResult(result);
-      setHistory(prev => [result, ...prev.slice(0, 9)]); // Keep last 10 results
+      setHistory(prev => [result, ...prev.slice(0, 19)]); // Keep last 20 results
       
       // Play win sound after a short delay
       setTimeout(() => {
@@ -111,7 +111,7 @@ export const CaseOpening: React.FC = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Box className="w-8 h-8 text-yellow-400" />
-            <h1 className="text-4xl font-bold text-white">Mystery Case Opening</h1>
+            <h1 className="text-4xl font-bold text-white">HAPPYLAND Gachapon!!!</h1>
             <Box className="w-8 h-8 text-yellow-400" />
           </div>
           <p className="text-gray-300 text-lg">Spin the reel and discover amazing prizes!</p>
