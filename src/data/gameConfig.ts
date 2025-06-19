@@ -168,7 +168,7 @@ export const gameConfig: GameConfig = {
     {
       name: "เครื่องปันไฟ ใหญ่ 2",
       rarity: "N",
-      image: await import(`../assets/images/modulelv2.png`).then(module => module.default)
+      image: await import(`../assets/images/largeGenerator.png`).then(module => module.default)
     },
     {
       name: "1,000 Cash",
