@@ -1,4 +1,3 @@
-import React from 'react';
 import { CaseOpening } from './components/CaseOpening';
 
 function App() {

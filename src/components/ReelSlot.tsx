@@ -21,49 +21,49 @@ export const ReelSlot: React.FC<ReelSlotProps> = ({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-  if (!isSpinning || sequence.length === 0) return;
+    if (!isSpinning || sequence.length === 0) return;
 
-  console.log('[SPINNING] Starting spin!');
+    console.log("[SPINNING] Starting spin!");
 
-  setIsAnimating(true);
-  setCurrentIndex(0);
+    setIsAnimating(true);
+    setCurrentIndex(0);
 
-  const slowdownStart = duration * 0.7;
-  let elapsed = 0;
-  let currentIdx = 0;
+    const slowdownStart = duration * 0.7;
+    let elapsed = 0;
+    let currentIdx = 0;
 
-  const spin = (currentSpeed: number) => {
-    intervalRef.current = setTimeout(() => {
-      currentIdx = (currentIdx + 1) % sequence.length;
-      setCurrentIndex(currentIdx);
-      elapsed += currentSpeed;
+    const spin = (currentSpeed: number) => {
+      intervalRef.current = setTimeout(() => {
+        currentIdx = (currentIdx + 1) % sequence.length;
+        setCurrentIndex(currentIdx);
+        elapsed += currentSpeed;
 
-      let nextSpeed = currentSpeed;
-      if (elapsed > slowdownStart) {
-        const progress = (elapsed - slowdownStart) / (duration - slowdownStart);
-        nextSpeed = 50 + (300 * progress);
-      }
+        let nextSpeed = currentSpeed;
+        if (elapsed > slowdownStart) {
+          const progress =
+            (elapsed - slowdownStart) / (duration - slowdownStart);
+          nextSpeed = 50 + 300 * progress;
+        }
 
-      if (elapsed < duration) {
-        spin(nextSpeed);
-      } else {
-        setCurrentIndex(sequence.length - 1);
-        setIsAnimating(false);
-        timeoutRef.current = setTimeout(() => {
-          onSpinComplete();
-        }, 500);
-      }
-    }, currentSpeed);
-  };
+        if (elapsed < duration) {
+          spin(nextSpeed);
+        } else {
+          setCurrentIndex(sequence.length - 1);
+          setIsAnimating(false);
+          timeoutRef.current = setTimeout(() => {
+            onSpinComplete();
+          }, 500);
+        }
+      }, currentSpeed);
+    };
 
-  spin(50);
+    spin(50);
 
-  return () => {
-    if (intervalRef.current) clearTimeout(intervalRef.current);
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-  };
-}, [isSpinning, sequence, duration, onSpinComplete]);
-
+    return () => {
+      if (intervalRef.current) clearTimeout(intervalRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [isSpinning, sequence, duration, onSpinComplete]);
 
   // Don't render if sequence is empty
   if (sequence.length === 0) {
@@ -75,7 +75,7 @@ export const ReelSlot: React.FC<ReelSlotProps> = ({
   }
 
   const visiblePrizes = [];
-  for (let i = -2; i <= 2; i++) {
+  for (let i = -3; i <= 3; i++) {
     const index = (currentIndex + i + sequence.length) % sequence.length;
     visiblePrizes.push({
       prize: sequence[index],
@@ -98,7 +98,7 @@ export const ReelSlot: React.FC<ReelSlotProps> = ({
             key={`${currentIndex}-${index}`}
             className={`
               absolute transition-transform duration-100 ease-out
-              ${item.isCenter ? 'z-20 scale-110' : 'z-10 scale-90 opacity-60'}
+              ${item.isCenter ? "z-20 scale-110" : "z-10 scale-90 opacity-60"}
             `}
             style={{
               transform: `translateX(${item.offset * 80}px) ${

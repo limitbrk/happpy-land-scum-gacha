@@ -69,7 +69,7 @@ export const CaseOpening: React.FC = () => {
       };
       
       setLastResult(result);
-      setHistory(prev => [result, ...prev.slice(0, 19)]); // Keep last 20 results
+      setHistory(prev => [result, ...prev]);
       
       // Play win sound after a short delay
       setTimeout(() => {
@@ -102,11 +102,35 @@ export const CaseOpening: React.FC = () => {
     return stats;
   };
 
+  // Helper to summarize history by prize name
+  const getSummedHistory = () => {
+    const summary: Record<string, { prize: Prize; count: number }> = {};
+    history.forEach(result => {
+      const key = result.prize.name;
+      if (!summary[key]) {
+        summary[key] = { prize: result.prize, count: 0 };
+      }
+      summary[key].count += 1;
+    });
+    return Object.values(summary);
+  };
+
+  const handleCopyHistory = () => {
+    const summed = getSummedHistory();
+    const lines = summed.map(
+      ({ prize, count }) =>
+        `${prize.name} (${prize.rarity}) x${count}`
+    );
+    const text = lines.join('\n');
+    navigator.clipboard.writeText(text);
+    alert('History copied to clipboard!');
+  };
+
   const stats = getRarityStats();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 p-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 p-4">
+      <div className="max-w-6xl w-full mx-auto flex flex-col flex-1">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -115,16 +139,18 @@ export const CaseOpening: React.FC = () => {
             <Box className="w-8 h-8 text-yellow-400" />
           </div>
           <p className="text-gray-300 text-lg">Spin the reel and discover amazing prizes!</p>
-          
           {/* Sound Toggle */}
-          <div className="flex justify-center mt-4">
-            <button
-              onClick={toggleSound}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
-            >
-              {soundEnabled ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
-              {soundEnabled ? 'Sound On' : 'Sound Off'}
-            </button>
+          <div className="flex justify-center mt-0">
+            {/* Move sound toggle button to top right of page */}
+            <div className="fixed top-4 right-4 z-50">
+              <button
+                onClick={toggleSound}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
+              >
+                {soundEnabled ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
+                {soundEnabled ? 'Sound On' : 'Sound Off'}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -181,7 +207,9 @@ export const CaseOpening: React.FC = () => {
 
         {/* Statistics */}
         {history.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1"
+          >
             {/* Rarity Statistics */}
             <div className="bg-black/40 rounded-xl p-6 backdrop-blur-sm border border-white/10">
               <h3 className="text-xl font-bold text-white mb-4">Rarity Statistics</h3>
@@ -215,24 +243,39 @@ export const CaseOpening: React.FC = () => {
 
             {/* Recent History */}
             <div className="bg-black/40 rounded-xl p-6 backdrop-blur-sm border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">Recent Wins</h3>
-              <div className="space-y-2 max-h-48 overflow-y-auto">
-                {history.slice(0, 5).map((result) => (
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-white">Recent Wins</h3>
+                <button
+                  onClick={handleCopyHistory}
+                  className="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition"
+                  title="Copy all history (summed by prize)"
+                >
+                  Copy All
+                </button>
+              </div>
+              <div className="space-y-2 max-h-[400px] overflow-y-auto">
+                {history.map((result) => (
                   <div key={result.timestamp} className="flex items-center gap-3 p-2 bg-white/5 rounded-lg">
-                    <img 
-                      src={result.prize.image} 
-                      alt={result.prize.name}
-                      className="w-8 h-8 object-contain rounded"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm truncate">{result.prize.name}</p>
-                      <p className={`text-xs ${
-                        result.prize.rarity === 'SSR' ? 'text-yellow-400' :
-                        result.prize.rarity === 'SR' ? 'text-purple-400' :
-                        result.prize.rarity === 'R' ? 'text-blue-400' : 'text-gray-400'
-                      }`}>
+                    <div className="relative w-8 h-8 flex-shrink-0">
+                      <img 
+                        src={result.prize.image} 
+                        alt={result.prize.name}
+                        className="w-8 h-8 object-contain rounded"
+                      />
+                      <span
+                        className={`
+                          absolute -top-1 -right-1 px-1 py-0.5 rounded text-xs font-bold shadow
+                          ${result.prize.rarity === 'SSR' ? 'bg-yellow-400 text-black' :
+                            result.prize.rarity === 'SR' ? 'bg-purple-400 text-white' :
+                            result.prize.rarity === 'R' ? 'bg-blue-400 text-white' : 'bg-gray-400 text-white'}
+                        `}
+                        style={{ fontSize: '0.7rem' }}
+                      >
                         {result.prize.rarity}
-                      </p>
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-white text-sm truncate">{result.prize.name}</p>
                     </div>
                   </div>
                 ))}
