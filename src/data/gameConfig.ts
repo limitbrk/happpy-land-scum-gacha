@@ -5,10 +5,10 @@ import winSound from '../assets/sounds/win.mp3';
 
 export const gameConfig: GameConfig = {
   rarity_weights: {
-    N: 68,
+    N: 50,
     R: 25,
-    SR: 5,
-    SSR: 2
+    SR: 15,
+    SSR: 10
   },
   sounds: {
     opening: openingSound,
