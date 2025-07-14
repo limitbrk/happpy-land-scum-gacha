@@ -5,10 +5,11 @@ import winSound from '../assets/sounds/win.mp3';
 
 export const gameConfig: GameConfig = {
   rarity_weights: {
-    N: 70,
-    R: 23,
-    SR: 5,
-    SSR: 2
+    N: 60,
+    R: 24,
+    SR: 10,
+    SSR: 5,
+    SSSR 1
   },
   sounds: {
     opening: openingSound,
@@ -479,6 +480,11 @@ export const gameConfig: GameConfig = {
       name: "TNT 5 ลูก",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/1/1e/TNT.png"
+    },
+    {
+      name: "ให้ยศคลาสได้ 1 ขั้น : 1 คลาส",
+      rarity: "SSSR",
+      image: "https://cdn-icons-png.flaticon.com/512/5585/5585376.png"
     }
   ]
 };
