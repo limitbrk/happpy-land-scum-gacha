@@ -95,7 +95,7 @@ export const CaseOpening: React.FC = () => {
   };
 
   const getRarityStats = () => {
-    const stats = { N: 0, R: 0, SR: 0, SSR: 0 };
+    const stats = { N: 0, R: 0, SR: 0, SSSR: 0 };
     history.forEach(result => {
       stats[result.prize.rarity]++;
     });
@@ -217,6 +217,7 @@ export const CaseOpening: React.FC = () => {
                 {Object.entries(stats).map(([rarity, count]) => (
                   <div key={rarity} className="flex justify-between items-center">
                     <span className={`font-semibold ${
+                      rarity === 'SSSR' ? 'text-red-400' :
                       rarity === 'SSR' ? 'text-yellow-400' :
                       rarity === 'SR' ? 'text-purple-400' :
                       rarity === 'R' ? 'text-blue-400' : 'text-gray-400'
@@ -227,6 +228,7 @@ export const CaseOpening: React.FC = () => {
                       <div className="w-20 bg-gray-700 rounded-full h-2">
                         <div 
                           className={`h-2 rounded-full ${
+                            rarity === 'SSSR' ? 'bg-red-400' :
                             rarity === 'SSR' ? 'bg-yellow-400' :
                             rarity === 'SR' ? 'bg-purple-400' :
                             rarity === 'R' ? 'bg-blue-400' : 'bg-gray-400'
@@ -265,7 +267,8 @@ export const CaseOpening: React.FC = () => {
                       <span
                         className={`
                           absolute -top-1 -right-1 px-1 py-0.5 rounded text-xs font-bold shadow
-                          ${result.prize.rarity === 'SSR' ? 'bg-yellow-400 text-black' :
+                          ${result.prize.rarity === 'SSSR' ? 'bg-red-400 text-black' :
+                            result.prize.rarity === 'SSR' ? 'bg-yellow-400 text-black' :
                             result.prize.rarity === 'SR' ? 'bg-purple-400 text-white' :
                             result.prize.rarity === 'R' ? 'bg-blue-400 text-white' : 'bg-gray-400 text-white'}
                         `}

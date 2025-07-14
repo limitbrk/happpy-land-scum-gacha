@@ -11,14 +11,16 @@ const rarityColors = {
   N: 'from-gray-400 to-gray-600',
   R: 'from-blue-400 to-blue-600',
   SR: 'from-purple-400 to-purple-600',
-  SSR: 'from-yellow-400 to-orange-500'
+  SSR: 'from-yellow-400 to-orange-500',
+  SSSR: 'from-red-400 to-pink-500'
 };
 
 const rarityGlow = {
   N: 'shadow-gray-500/20',
   R: 'shadow-blue-500/30',
   SR: 'shadow-purple-500/40',
-  SSR: 'shadow-yellow-500/50'
+  SSR: 'shadow-yellow-500/50',
+  SSSR: 'shadow-red-500/70'
 };
 
 export const PrizeCard: React.FC<PrizeCardProps> = ({ 
