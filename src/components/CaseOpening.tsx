@@ -95,7 +95,7 @@ export const CaseOpening: React.FC = () => {
   };
 
   const getRarityStats = () => {
-    const stats = { N: 0, R: 0, SR: 0, SSSR: 0 };
+    const stats = { N: 0, R: 0, SR: 0, SSR: 0, SSSR: 0 };
     history.forEach(result => {
       stats[result.prize.rarity]++;
     });
