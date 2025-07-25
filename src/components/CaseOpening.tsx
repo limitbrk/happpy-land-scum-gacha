@@ -27,6 +27,7 @@ export const CaseOpening: React.FC = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [currentSequence, setCurrentSequence] = useState<Prize[]>(getDefaultReelSequence());
   const [lastResult, setLastResult] = useState<OpeningResult | null>(null);
+  const [lastBatchResults, setLastBatchResults] = useState<OpeningResult[] | null>(null); // NEW
   const [history, setHistory] = useState<OpeningResult[]>([]);
   const [showResult, setShowResult] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -43,7 +44,8 @@ export const CaseOpening: React.FC = () => {
 
     setShowResult(false);
     setIsSpinning(true);
-    
+    setLastBatchResults(null); // NEW
+
     // Play opening sound
     if (soundEnabled) {
       soundManager.playSound('opening', 0.3);
@@ -57,21 +59,66 @@ export const CaseOpening: React.FC = () => {
     setCurrentSequence(sequence);
   };
 
+  // Add a new handler for opening 10 cases
+  const handleOpenCase10 = async () => {
+    if (isSpinning) return;
+
+    setShowResult(false);
+    setIsSpinning(true);
+    setLastBatchResults(null);
+
+    if (soundEnabled) {
+      soundManager.playSound('opening', 0.3);
+    }
+
+    // สุ่ม 10 รางวัล
+    const results: OpeningResult[] = [];
+    for (let i = 0; i < 10; i++) {
+      const winningPrize = prizeSelector.selectRandomPrize();
+      results.push({
+        prize: winningPrize,
+        timestamp: Date.now() + i,
+      });
+    }
+
+    // ให้ ReelSlot จบที่รางวัลสุดท้าย (จะตรงกับ history ตัวแรก)
+    const finalPrize = results[results.length - 1].prize;
+    const sequence = prizeSelector.generateReelSequence(finalPrize, 50);
+    setCurrentSequence(sequence);
+
+    // เก็บ batch ไว้รอ handleSpinComplete
+    setLastBatchResults(results); // เก็บผลลัพธ์ในลำดับที่ถูกต้อง
+  };
+
   const handleSpinComplete = () => {
-    console.log("[DEBUG] Spin finished"); 
+    console.log("[DEBUG] Spin finished");
     setIsSpinning(false);
-    
+
+    // ถ้ามี pendingBatchResults แปลว่าเป็นการเปิด 10 ครั้ง
+    if (lastBatchResults) {
+      setLastResult(lastBatchResults[lastBatchResults.length - 1]);
+      setHistory(prev => [...[...lastBatchResults].reverse(), ...prev]);
+
+      setTimeout(() => {
+        if (soundEnabled) {
+          soundManager.playSound('win', 0.4);
+        }
+        setShowResult(true);
+      }, 500);
+      return;
+    }
+
+    // กรณีเปิดครั้งเดียว
     if (currentSequence.length > 0) {
       const winningPrize = currentSequence[currentSequence.length - 1];
       const result: OpeningResult = {
         prize: winningPrize,
         timestamp: Date.now()
       };
-      
+
       setLastResult(result);
       setHistory(prev => [result, ...prev]);
-      
-      // Play win sound after a short delay
+
       setTimeout(() => {
         if (soundEnabled) {
           soundManager.playSound('win', 0.4);
@@ -194,6 +241,33 @@ export const CaseOpening: React.FC = () => {
               )}
             </button>
 
+            {/* New button for opening 10 cases */}
+            <button
+              onClick={handleOpenCase10}
+              disabled={isSpinning}
+              className={`
+                flex items-center gap-2 px-8 py-3 rounded-xl font-semibold text-lg
+                transition-all duration-300 transform hover:scale-105
+                ${isSpinning 
+                  ? 'bg-gray-600 cursor-not-allowed' 
+                  : 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 shadow-lg hover:shadow-pink-500/25'
+                }
+                text-white
+              `}
+            >
+              {isSpinning ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  Opening...
+                </>
+              ) : (
+                <>
+                  <Play className="w-5 h-5" />
+                  Open 10 Case
+                </>
+              )}
+            </button>
+
             <button
               onClick={resetGame}
               disabled={isSpinning}
@@ -212,7 +286,9 @@ export const CaseOpening: React.FC = () => {
           >
             {/* Rarity Statistics */}
             <div className="bg-black/40 rounded-xl p-6 backdrop-blur-sm border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">Rarity Statistics</h3>
+              <h3 className="text-xl font-bold text-white mb-4">
+                Rarity Statistics <span className="text-sm text-gray-400 font-normal">({history.length} results)</span>
+              </h3>
               <div className="space-y-3">
                 {Object.entries(stats).map(([rarity, count]) => (
                   <div key={rarity} className="flex justify-between items-center">
@@ -288,7 +364,31 @@ export const CaseOpening: React.FC = () => {
         )}
       </div>
       <Modal isOpen={showResult} onClose={() => setShowResult(false)}>
-        {lastResult && (
+        {lastBatchResults ? (
+          <div className="text-center animate-fadeIn">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Trophy className="w-6 h-6 text-yellow-400" />
+              <h2 className="text-2xl font-bold text-white">You Opened 10 Cases!</h2>
+              <Trophy className="w-6 h-6 text-yellow-400" />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+              {lastBatchResults.map((result) => (
+                <div key={result.timestamp} className="flex flex-col items-center">
+                  <PrizeCard prize={result.prize} size="medium" isActive={true} />
+                  <p className="text-white text-sm mt-2">{result.prize.name}</p>
+                  <span className={`text-xs font-bold ${
+                    result.prize.rarity === 'SSSR' ? 'bg-red-400 text-black' :
+                    result.prize.rarity === 'SSR' ? 'text-yellow-400' :
+                    result.prize.rarity === 'SR' ? 'text-purple-400' :
+                    result.prize.rarity === 'R' ? 'text-blue-400' : 'text-gray-400'
+                  }`}>
+                    {result.prize.rarity}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : lastResult && (
           <div className="text-center animate-fadeIn">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Trophy className="w-6 h-6 text-yellow-400" />
