@@ -9,7 +9,7 @@ export const gameConfig: GameConfig = {
     R: 24,
     SR: 10,
     SSR: 5,
-    SSSR: 1
+    SSSR 1
   },
   sounds: {
     opening: openingSound,
@@ -485,6 +485,31 @@ export const gameConfig: GameConfig = {
       name: "ให้ยศคลาสได้ 1 ขั้น : 1 คลาส",
       rarity: "SSSR",
       image: "https://cdn-icons-png.flaticon.com/512/5585/5585376.png"
+    },
+       {
+           name: "Kitchen Board (เขียง) 5 อัน",
+      rarity: "R",
+      image: "https://scum.fandom.com/wiki/Kitchen_Board?file=Kitchen_Board.png"
+    },
+       {
+           name: "Pen (ปากกา) 5 ด้าม",
+      rarity: "R",
+      image: "https://scum.fandom.com/wiki/Pen?file=Pen.png"
+    },
+       {
+           name: "Candle (เทียน) 5 อัน",
+      rarity: "R",
+      image: "https://scum.fandom.com/wiki/Candle?file=Candle.png"
+    },
+       {
+           name: "Deer Antlers (เขากวาง) 5 อัน",
+      rarity: "SSR",
+      image: "https://scum.fandom.com/wiki/Deer_Antlers?file=Deer_Antlers.png"
+    },
+       {
+           name: "Bear Paws (ตีนหมี) 5 อัน",
+      rarity: "SSR",
+      image: "https://scum.fandom.com/wiki/Bear_Paws?file=Bear_Paws_Back.png"
     }
   ]
 };
