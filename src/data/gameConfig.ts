@@ -510,82 +510,82 @@ export const gameConfig: GameConfig = {
            name: "Bear Paws (ตีนหมี) 5 อัน",
       rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/58/Bear_Paws_Back.png"
-    }
+    },
        {
            name: "WolfsWagen Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    }
+    },
        {
            name: "Laika Wheel 4 ล้อ ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/50/Wheel_255_55_R16.png"
-    }
+    },
        {
            name: "Rager Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    }
+    },
        {
            name: "Quad Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    }
+    },
        {
            name: "Tracktor Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    }
+    },
        {
            name: "Cruiser Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
-    }
+    },
        {
            name: "Dirt Bike Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
-    }
+    },
        {
            name: "Mountain Bike Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
-    }
+    },
        {
            name: "City Bike Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
-    }
+    },
        {
            name: "Wooden Log 1 ลังเหล็ก",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/d8/Wooden_Log.png"
-    }
+    },
        {
            name: "Wooden Plank 1 ลังเหล็ก",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/7b/Wooden_Plank.png"
-    }
+    },
        {
            name: "Dildo 1 ลังเหล็ก",
       rarity: "N",
       image: "https://scum.wiki.gg/images/Dildo.png?d333ee"
-    }
+    },
        {
            name: "Loot Puppet 1 ตัว",
       rarity: "N",
       image: "https://clan.fastly.steamstatic.com/images//27012442/10a8fca264413da14dc2802951513041071ae211.jpg"
-    }
+    },
        {
            name: "Boombox 5 เครื่อง",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/7a/Boom_Box.png"
-    }
+    },
        {
            name: "Cannabis Bud (ดอกกัญชา) 1 ลังเหล็ก",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/c/cc/Cannabis_Bud.png"
-    }
+    },
        {
            name: "Brick 370 ก้อน",
       rarity: "N",
