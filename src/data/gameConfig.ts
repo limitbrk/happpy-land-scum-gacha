@@ -9,7 +9,7 @@ export const gameConfig: GameConfig = {
     R: 24,
     SR: 10,
     SSR: 5,
-    SSSR 1
+    SSSR: 1
   },
   sounds: {
     opening: openingSound,
