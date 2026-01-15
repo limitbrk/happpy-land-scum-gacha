@@ -9,7 +9,7 @@ export const gameConfig: GameConfig = {
     R: 24,
     SR: 10,
     SSR: 5,
-    SSSR: 1
+    SSSR 1
   },
   sounds: {
     opening: openingSound,
@@ -18,12 +18,12 @@ export const gameConfig: GameConfig = {
   prizes: [
     {
       name: "10,000,000 Cash",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
     },
     {
       name: "2,500,000 Cash",
-      rarity: "SR",
+      rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
     },
         {
@@ -102,7 +102,7 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
         {
-      name: "Horse 3 ตัว",
+      name: "Horse Head 3 หัว",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/ed/Horse_Head.png"
     },
@@ -128,7 +128,7 @@ export const gameConfig: GameConfig = {
     },
         {
       name: "Fame Point 10000",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
         {
@@ -138,7 +138,7 @@ export const gameConfig: GameConfig = {
     },
         {
       name: "ชุดกันซอมบี้ 1 ตัว",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/af/Cursed_Puppet_Suit.png"
     },
         {
@@ -198,7 +198,7 @@ export const gameConfig: GameConfig = {
     },
     {
       name: "Fame Point 5000",
-      rarity: "SR",
+      rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
     {
@@ -228,7 +228,7 @@ export const gameConfig: GameConfig = {
     },
     {
       name: "Fame Point 1500",
-      rarity: "R",
+      rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
     {
@@ -357,7 +357,7 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/ed/Tuna_Salad_MRE.png"
     },
     {
-      name: "Bear 3 ตัว",
+      name: "Bear Head 3 หัว",
       rarity: "R",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/d8/Bear_Head.png"
     },
@@ -489,27 +489,107 @@ export const gameConfig: GameConfig = {
        {
            name: "Kitchen Board (เขียง) 5 อัน",
       rarity: "R",
-      image: "https://scum.fandom.com/wiki/Kitchen_Board?file=Kitchen_Board.png"
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a9/Kitchen_Knife.png"
     },
        {
            name: "Pen (ปากกา) 5 ด้าม",
       rarity: "R",
-      image: "https://scum.fandom.com/wiki/Pen?file=Pen.png"
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/4/4f/Pen.png"
     },
        {
            name: "Candle (เทียน) 5 อัน",
       rarity: "R",
-      image: "https://scum.fandom.com/wiki/Candle?file=Candle.png"
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/30/Candle.png"
     },
        {
            name: "Deer Antlers (เขากวาง) 5 อัน",
       rarity: "SSR",
-      image: "https://scum.fandom.com/wiki/Deer_Antlers?file=Deer_Antlers.png"
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/dd/Deer_Antlers.png"
     },
        {
            name: "Bear Paws (ตีนหมี) 5 อัน",
       rarity: "SSR",
-      image: "https://scum.fandom.com/wiki/Bear_Paws?file=Bear_Paws_Back.png"
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/58/Bear_Paws_Back.png"
+    }
+       {
+           name: "WolfsWagen Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
+    }
+       {
+           name: "Laika Wheel 4 ล้อ ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/50/Wheel_255_55_R16.png"
+    }
+       {
+           name: "Rager Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
+    }
+       {
+           name: "Quad Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
+    }
+       {
+           name: "Tracktor Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
+    }
+       {
+           name: "Cruiser Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
+    }
+       {
+           name: "Dirt Bike Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
+    }
+       {
+           name: "Mountain Bike Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
+    }
+       {
+           name: "City Bike Wheel 4 ล้อ",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
+    }
+       {
+           name: "Wooden Log 1 ลังเหล็ก",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/d8/Wooden_Log.png"
+    }
+       {
+           name: "Wooden Plank 1 ลังเหล็ก",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/7b/Wooden_Plank.png"
+    }
+       {
+           name: "Dildo 1 ลังเหล็ก",
+      rarity: "N",
+      image: "https://scum.wiki.gg/images/Dildo.png?d333ee"
+    }
+       {
+           name: "Loot Puppet 1 ตัว",
+      rarity: "N",
+      image: "https://clan.fastly.steamstatic.com/images//27012442/10a8fca264413da14dc2802951513041071ae211.jpg"
+    }
+       {
+           name: "Boombox 5 เครื่อง",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/7a/Boom_Box.png"
+    }
+       {
+           name: "Cannabis Bud (ดอกกัญชา) 1 ลังเหล็ก",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/c/cc/Cannabis_Bud.png"
+    }
+       {
+           name: "Brick 370 ก้อน",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/58/Brick.png"
     }
   ]
 };
