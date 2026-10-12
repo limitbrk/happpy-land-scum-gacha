@@ -296,8 +296,8 @@ export const CaseOpening: React.FC = () => {
                       rarity === 'SSSSR' ? 'text-fuchsia-400' :
                       rarity === 'SSSR' ? 'text-red-400' :
                       rarity === 'SSR' ? 'text-yellow-400' :
-                      rarity === 'SR' ? 'text-purple-400' :
-                      rarity === 'R' ? 'text-blue-400' : 'text-gray-400'
+                      rarity === 'SR' ? 'text-blue-400' :
+                      rarity === 'R' ? 'text-green-400' : 'text-gray-400'
                     }`}>
                       {rarity}
                     </span>
@@ -308,8 +308,8 @@ export const CaseOpening: React.FC = () => {
                             rarity === 'SSSSR' ? 'bg-fuchsia-400' :
                             rarity === 'SSSR' ? 'bg-red-400' :
                             rarity === 'SSR' ? 'bg-yellow-400' :
-                            rarity === 'SR' ? 'bg-purple-400' :
-                            rarity === 'R' ? 'bg-blue-400' : 'bg-gray-400'
+                            rarity === 'SR' ? 'bg-blue-400' :
+                            rarity === 'R' ? 'bg-green-400' : 'bg-gray-400'
                           }`}
                           style={{ width: `${history.length > 0 ? (count / history.length) * 100 : 0}%` }}
                         />
@@ -348,8 +348,8 @@ export const CaseOpening: React.FC = () => {
                           ${result.prize.rarity === 'SSSSR' ? 'bg-fuchsia-400 text-black' :
                             result.prize.rarity === 'SSSR' ? 'bg-red-400 text-black' :
                             result.prize.rarity === 'SSR' ? 'bg-yellow-400 text-black' :
-                            result.prize.rarity === 'SR' ? 'bg-purple-400 text-white' :
-                            result.prize.rarity === 'R' ? 'bg-blue-400 text-white' : 'bg-gray-400 text-white'}
+                            result.prize.rarity === 'SR' ? 'bg-blue-400 text-white' :
+                            result.prize.rarity === 'R' ? 'bg-green-400 text-white' : 'bg-gray-400 text-white'}
                         `}
                         style={{ fontSize: '0.7rem' }}
                       >
@@ -383,8 +383,8 @@ export const CaseOpening: React.FC = () => {
                     result.prize.rarity === 'SSSSR' ? 'text-fuchsia-400' :
                     result.prize.rarity === 'SSSR' ? 'text-red-400' :
                     result.prize.rarity === 'SSR' ? 'text-yellow-400' :
-                    result.prize.rarity === 'SR' ? 'text-purple-400' :
-                    result.prize.rarity === 'R' ? 'text-blue-400' : 'text-gray-400'
+                    result.prize.rarity === 'SR' ? 'text-blue-400' :
+                    result.prize.rarity === 'R' ? 'text-green-400' : 'text-gray-400'
                   }`}>
                     {result.prize.rarity}
                   </span>

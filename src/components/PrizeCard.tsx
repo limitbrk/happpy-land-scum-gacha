@@ -9,8 +9,8 @@ interface PrizeCardProps {
 
 const rarityColors = {
   N: 'from-gray-400 to-gray-600',
-  R: 'from-blue-400 to-blue-600',
-  SR: 'from-purple-400 to-purple-600',
+  R: 'from-green-400 to-green-600',
+  SR: 'from-blue-400 to-blue-600',
   SSR: 'from-yellow-400 to-orange-500',
   SSSR: 'from-red-400 to-pink-500',
   SSSSR: 'from-fuchsia-400 via-pink-500 to-yellow-400'
@@ -18,8 +18,8 @@ const rarityColors = {
 
 const rarityGlow = {
   N: 'shadow-gray-500/20',
-  R: 'shadow-blue-500/30',
-  SR: 'shadow-purple-500/40',
+  R: 'shadow-green-500/30',
+  SR: 'shadow-blue-500/40',
   SSR: 'shadow-yellow-500/50',
   SSSR: 'shadow-red-500/70',
   SSSSR: 'shadow-fuchsia-400/90'
