@@ -1,6 +1,6 @@
 export interface Prize {
   name: string;
-  rarity: 'N' | 'R' | 'SR' | 'SSR' | 'SSSR';
+  rarity: 'N' | 'R' | 'SR' | 'SSR' | 'SSSR' | 'SSSSR';
   image: string;
 }
 
@@ -10,6 +10,7 @@ export interface RarityWeights {
   SR: number;
   SSR: number;
   SSSR: number;
+  SSSSR: number;
 }
 
 export interface SoundConfig {

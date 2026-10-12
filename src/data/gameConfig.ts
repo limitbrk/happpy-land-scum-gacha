@@ -381,6 +381,7 @@ export const gameConfig: GameConfig = {
       name: "EMP 25 ลูก",
       rarity: "SSR",
       image: "https://cdnb.artstation.com/p/assets/images/images/070/291/229/large/tomislav-uros-emp-rend2222er.jpg?1702210401"
+    },
     {
       name: "ให้ยศคลาสได้ 1 ขั้น : 1 คลาส",
       rarity: "SSSSR",
