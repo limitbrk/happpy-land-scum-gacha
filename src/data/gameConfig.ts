@@ -7,9 +7,10 @@ export const gameConfig: GameConfig = {
   rarity_weights: {
     N: 50,
     R: 25,
-    SR: 13,
+    SR: 15,
     SSR: 7,
-    SSSR: 5
+    SSSR: 2.5,
+    SSSSR: 0.5
   },
   sounds: {
     opening: openingSound,
@@ -17,33 +18,28 @@ export const gameConfig: GameConfig = {
   },
   prizes: [
     {
-      name: "10,000,000 Cash",
+      name: "5,000,000 Cash",
+      rarity: "SSSSR",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
+    },
+    {
+      name: "1,000,000 Cash",
       rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
     },
     {
-      name: "2,500,000 Cash",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
-    },
-        {
-      name: "500,000 Cash",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
-    },
-        {
       name: "250,000 Cash",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
-    },
-    {
-      name: "100,000 Cash",
-      rarity: "R",
+      rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
     },
     {
       name: "50,000 Cash",
-      rarity: "N",
+      rarity: "R",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
+    },
+    {
+      name: "25,000 Cash",
+      rarity: "R",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
     },
     {
@@ -52,7 +48,12 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
     },
     {
-      name: "1,000 Cash",
+      name: "5,000 Cash",
+      rarity: "N",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
+    },
+    {
+      name: "100 Cash",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/66/Cash.png"
     },
@@ -61,110 +62,90 @@ export const gameConfig: GameConfig = {
       rarity: "SSR",
       image: "https://images.steamusercontent.com/ugc/1773878663505683892/E4D5EAB18AD915147F7861BD7FD5259ABE91C2A1/"
     },
-        {
+    {
       name: "Kinglet Duster 1 ลำ",
       rarity: "SSR",
       image: "https://images.steamusercontent.com/ugc/1773878663507008617/022BE3A2468B57D765F00679A2592AF3F76EE6B3/"
     },
-        {
+    {
       name: "Rager 1 คัน",
       rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/74/Pickup.png"
     },
-        {
+    {
       name: "Wolfswagen 1 คัน",
       rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/5f/Wolfswagen.png"
     },
-        {
+    {
       name: "Laika 1 คัน",
       rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/6d/Laika.png"
     },
-        {
+    {
       name: "RIS 1 คัน",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/ae/Quad_A.png"
     },
-        {
+    {
       name: "Tractor 1 คัน",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/7a/Tractor.png"
     },
-        {
-      name: "เครื่องปันไฟใหญ่ 2 เครื่อง",
-      rarity: "N",
-      image: "https://clan.fastly.steamstatic.com/images//27012442/798434db1520d9e824f841e6ff1f79091fc8113a.jpg"
-    },
-        {
+    {
       name: "Fame Point 100",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
-        {
-      name: "Horse Head 3 หัว",
-      rarity: "SR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/ed/Horse_Head.png"
-    },
-        {
-      name: "เกลือกระปุก 1 กล่องเหล็ก",
+    {
+      name: "เกลือกระปุก 370 กระปุก",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/77/Salt.png"
     },
-        {
+    {
       name: "AK47 Engraved 5 กระบอก",
       rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/f/f8/AK-47.png"
     },
-        {
+    {
       name: "Fishing Gear ครบชุด 1 ชุด",
       rarity: "R",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/ec/ALL_Spincast_Rod.gif"
     },
-        {
+    {
       name: "Phoenix Tears 5 หลอด",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/0d/PT-29_Rapid_Recovery_Serum.png"
     },
-        {
+    {
       name: "Fame Point 10000",
-      rarity: "SSSR",
+      rarity: "SSSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
-        {
+    {
       name: "ชุดซ่อมปืน 20 อัน",
       rarity: "R",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/f/f9/Weapon_Cleaning_Kit.png"
     },
-        {
+    {
       name: "ชุดกันซอมบี้ 1 ตัว",
-      rarity: "SSSR",
+      rarity: "SSSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/af/Cursed_Puppet_Suit.png"
     },
-        {
+    {
       name: "โมดูลเทา 10 อัน",
       rarity: "N",
       image: "https://clan.fastly.steamstatic.com/images//27012442/a117b87dfb1e5fb5a1b1ebdde31a1db186fa44c3.jpg"
     },
-        {
+    {
       name: "Base Expansion Kit Lv.2 1 อัน",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/dc/Base_Expansion_Kit_Lvl2.png"
     },
-        {
-      name: "กระสุนยูเรเนี่ยมชนิดใดก็ได้จำนวน 5 กอง",
-      rarity: "SR",
-      image: "https://st2.depositphotos.com/1039721/7008/v/950/depositphotos_70085493-stock-illustration-rifle-bullets-over-white-background.jpg"
-    },
-        {
+    {
       name: "City Bike 1 คัน",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/08/City_Bike.png"
-    },
-        {
-      name: "C4 Keypad Circuit Board 5 ชิ้น",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/b/b1/C4_Keypad_Circuit_Board.png"
     },
     {
       name: "Cheeseburger MRE 5 ห่อ",
@@ -175,11 +156,6 @@ export const gameConfig: GameConfig = {
       name: "Gold M1911 5 กระบอก",
       rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/8/82/M1911_Gold.png"
-    },
-    {
-      name: "Boar Head 3 หัว",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/dc/Boar_Head.png"
     },
     {
       name: "โมดูลทอง 10 อัน",
@@ -198,7 +174,7 @@ export const gameConfig: GameConfig = {
     },
     {
       name: "Fame Point 5000",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
     {
@@ -212,11 +188,6 @@ export const gameConfig: GameConfig = {
       image: "https://clan.fastly.steamstatic.com/images//27012442/a117b87dfb1e5fb5a1b1ebdde31a1db186fa44c3.jpg"
     },
     {
-      name: "Donkey Head 3 หัว",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a1/Donkey_Head.png"
-    },
-    {
       name: "โมดูลฟ้า 10 อัน",
       rarity: "R",
       image: "https://clan.fastly.steamstatic.com/images//27012442/a117b87dfb1e5fb5a1b1ebdde31a1db186fa44c3.jpg"
@@ -227,8 +198,8 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/0b/Lucky_Star_Cigarettes.png"
     },
     {
-      name: "Fame Point 1500",
-      rarity: "SR",
+      name: "Fame Point 500",
+      rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/75/Fame_Points_ICO.png"
     },
     {
@@ -237,22 +208,17 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/65/Soap.png"
     },
     {
-      name: "Buck Head 3 หัว",
-      rarity: "SR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/64/Buck_Head.png"
-    },
-    {
       name: "Red Ghoul Energy Drink 10 กระป๋อง",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/5a/Red_Ghoul_Energy_Drink.png"
     },
     {
-      name: "ลูกตาซอมบี้ 1 ลัง",
+      name: "ลูกตาซอมบี้ 37 กอง",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/f/fa/Puppet_Eye.png"
     },
     {
-      name: "RPG7 2 กระบอก + กระสุน 50 ลูก",
+      name: "RPG7 1 กระบอก + กระสุน 24 ลูก",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/c/c6/RPG7.png"
     },
@@ -262,19 +228,14 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/64/DEagle_50_2.png"
     },
     {
-      name: "Metal Pipe 5 อัน",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/54/Metal_Pipe.png"
-    },
-    {
       name: "Advanced Lockpick 30 อัน",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/1/11/Advanced_Lockpick.png"
     },
     {
-      name: "เหล็ก 1 ลัง",
+      name: "เหล็ก 100 กอง",
       rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/8/83/Improvised_Metal_Chest.png"
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/04/Metal_Scrap.png"
     },
     {
       name: "C4 Bomb 1 ลูก",
@@ -292,56 +253,16 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/30/Anti-Personnel_Mine.png"
     },
     {
-      name: "Compound Bow 5 คัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/9e/Compound_Bow.png"
-    },
-    {
-      name: "Compound Bow Desert 5 คัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/9e/Compound_Bow.png"
-    },
-        {
-      name: "Compound Bow Digital 5 คัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/9e/Compound_Bow.png"
-    },
-        {
-      name: "Compound Bow Snow 5 คัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/9e/Compound_Bow.png"
-    },
-        {
-      name: "Compound Bow US Scorpion 5 คัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/9e/Compound_Bow.png"
-    },
-        {
-      name: "Compound Bow Woodland 5 คัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/9e/Compound_Bow.png"
-    },
-        {
-      name: "Blackhawk Crossbow 5 คัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/06/BlackHawk_Crossbow.png"
-    },
-        {
-      name: "7.62x39mm AP Box 10 กล่อง",
-      rarity: "SR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/67/7.62x39mm_Armor_Piercing_Ammunition_Box.png"
-    },
-        {
-      name: "5.56x45mm AP Box 10 กล่อง",
-      rarity: "SR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/e7/5.56x45mm_Armor_Piercing_Ammunition_Box.png"
-    },
-        {
       name: ".50 BMG AP Box 10 กล่อง",
-      rarity: "SR",
+      rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/97/.50_BMG_Armor_Piercing_Ammunition_Box.png"
     },
-        {
+    {
+      name: ".50 BMG TR Box 10 กล่อง",
+      rarity: "SR",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/4/4c/.50_BMG_Tracer_Ammunition_Box.png"
+    },
+    {
       name: "Screwdriver 10 อัน",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/1/1d/Screwdriver.png"
@@ -355,11 +276,6 @@ export const gameConfig: GameConfig = {
       name: "Tuna Salad MRE 5 ห่อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/ed/Tuna_Salad_MRE.png"
-    },
-    {
-      name: "Bear Head 3 หัว",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/d8/Bear_Head.png"
     },
     {
       name: "Scorpion 40# 5 คัน",
@@ -393,17 +309,17 @@ export const gameConfig: GameConfig = {
     },
     {
       name: "Vhendya's Katana 5 เล่ม",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/f/f9/Vhendya%27s_Katana.png"
     },
     {
       name: "Katana 5 เล่ม",
-      rarity: "SR",
+      rarity: "SSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/e9/Katana.png"
     },
     {
       name: "M82A1 5 กระบอก",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/27/M82A1.png"
     },
     {
@@ -427,23 +343,13 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/00/Wooden_Motorboat.png"
     },
     {
-      name: "Goat Head 3 หัว",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/3a/Goat_Head.png"
-    },
-    {
       name: "C4 Packed 5 ชิ้น",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/da/Packed_C4.png"
     },
     {
-      name: "C4 Timer Circuit Board 5 ชิ้น",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/d1/C4_Timer_Circuit_Board.png"
-    },
-    {
       name: "C4 Detonator 5 ชิ้น",
-      rarity: "SSR",
+      rarity: "SSSR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/5e/C4_Detonator.png"
     },
     {
@@ -467,86 +373,20 @@ export const gameConfig: GameConfig = {
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/f/fb/Grenade.png"
     },
     {
-      name: "Doe Head 3 หัว",
-      rarity: "SR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/8/80/Doe_Head.png"
-    },
-    {
-      name: "Wolf Head 3 หัว",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/3c/Wolf_Head.png"
-    },
-    {
       name: "TNT 5 ลูก",
       rarity: "SR",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/1/1e/TNT.png"
     },
     {
+      name: "EMP 25 ลูก",
+      rarity: "SSR",
+      image: "https://cdnb.artstation.com/p/assets/images/images/070/291/229/large/tomislav-uros-emp-rend2222er.jpg?1702210401"
+    {
       name: "ให้ยศคลาสได้ 1 ขั้น : 1 คลาส",
-      rarity: "SSSR",
+      rarity: "SSSSR",
       image: "https://cdn-icons-png.flaticon.com/512/5585/5585376.png"
     },
-       {
-           name: "Kitchen Board (เขียง) 5 อัน",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a9/Kitchen_Knife.png"
-    },
-       {
-           name: "Pen (ปากกา) 5 ด้าม",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/4/4f/Pen.png"
-    },
-       {
-           name: "Candle (เทียน) 5 อัน",
-      rarity: "R",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/30/Candle.png"
-    },
-       {
-           name: "Deer Antlers (เขากวาง) 5 อัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/dd/Deer_Antlers.png"
-    },
-       {
-           name: "Bear Paws (ตีนหมี) 5 อัน",
-      rarity: "SSR",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/58/Bear_Paws_Back.png"
-    },
-       {
-           name: "WolfsWagen Wheel 4 ล้อ",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    },
-       {
-           name: "Laika Wheel 4 ล้อ ",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/50/Wheel_255_55_R16.png"
-    },
-       {
-           name: "Rager Wheel 4 ล้อ",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    },
-       {
-           name: "Quad Wheel 4 ล้อ",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    },
-       {
-           name: "Tracktor Wheel 4 ล้อ",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/2b/Wheel_205_55_R16.png"
-    },
-       {
-           name: "Cruiser Wheel 4 ล้อ",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
-    },
-       {
-           name: "Dirt Bike Wheel 4 ล้อ",
-      rarity: "N",
-      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
-    },
-       {
+    {
            name: "Mountain Bike Wheel 4 ล้อ",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a3/Wheel_110_80_R19.png"
@@ -571,12 +411,7 @@ export const gameConfig: GameConfig = {
       rarity: "N",
       image: "https://scum.wiki.gg/images/Dildo.png?d333ee"
     },
-       {
-           name: "Loot Puppet 1 ตัว",
-      rarity: "N",
-      image: "https://clan.fastly.steamstatic.com/images//27012442/10a8fca264413da14dc2802951513041071ae211.jpg"
-    },
-       {
+    {
            name: "Boombox 5 เครื่อง",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/7a/Boom_Box.png"
@@ -586,10 +421,35 @@ export const gameConfig: GameConfig = {
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/c/cc/Cannabis_Bud.png"
     },
-       {
+    {
            name: "Brick 370 ก้อน",
       rarity: "N",
       image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/5/58/Brick.png"
+    },
+    {
+           name: "ของคลาส The Liquid Alchemist ครบทุกแบบ แบบละ 5 ชิ้น",
+      rarity: "SSSSR",
+      image: "https://cdn-icons-png.flaticon.com/512/5585/5585376.png"
+    },
+    {
+           name: "ของคลาส The Pathfinder ครบทุกแบบ แบบละ 20 ชิ้น",
+      rarity: "SSSSR",
+      image: "https://cdn-icons-png.flaticon.com/512/5585/5585376.png"
+    },
+    {
+           name: "ของคลาส Wilderness Foraging ครบทุกแบบ แบบละ 20 ชิ้น",
+      rarity: "SSSSR",
+      image: "https://cdn-icons-png.flaticon.com/512/5585/5585376.png"
+    },
+    {
+           name: "Gold 10",
+      rarity: "SSSR",
+      image: "https://www.intergold.co.th/wp-content/uploads/2017/06/Gold.png"
+    },
+    {
+           name: "Tang Dao 5 เล่ม",
+      rarity: "SSSR",
+      image: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/91/Tang_Dao.png"
     }
   ]
 };
